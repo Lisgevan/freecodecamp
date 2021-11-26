@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#heroText {
+	color: #dc143c;
+}
+
+#footertitle {
+	font-size: 4em;
+}
+
+.contactLinks {
+	font-size: 2em;
+	color: #fff;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	text-decoration: none;
+}
+
+.projectH2 {
+	text-align: center;
+	margin-top: 5%;
+	text-decoration: underline;
+	color: #fff;
+	font-size: 3em;
+}
+
+main {
+	background-color: #45567d;
+}
+
+/* div {
+	margin: 0;
+	padding: 0;
+} */
+
+@media screen {
+}

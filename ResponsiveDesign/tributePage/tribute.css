@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+main {
+	display: grid;
+	justify-items: center;
+}
+
+.header {
+	display: grid;
+	justify-items: center;
+	margin: 1em;
+}
+q {
+	text-align: center;
+	font-size: 0.75em;
+}
+
+figure {
+	display: grid;
+	justify-items: center;
+	margin: 1em;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width: 50%;
+}
+
+.content {
+	margin: 1em;
+}
+
+.content div {
+	margin-top: 2em;
+}
+
+#tribute-info {
+	margin: 3em;
+}

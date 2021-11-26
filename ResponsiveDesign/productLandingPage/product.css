@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+main {
+	margin-top: 100px;
+}
+
+#flexDiv {
+	display: flex;
+}
+
+footer {
+	background-color: #eee;
+}
+
+#header-img {
+	width: 30%;
+	height: auto;
+}
+
+i {
+	/* transform: scalex(-1); */
+	color: #ff8c00;
+	font-family: "Font Awesome 5 Free";
+	content: "\f00d";
+	font-size: 1.25rem;
+	font-weight: 900;
+}
+
+@media screen {
+}
