@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>29. Adjust the Hue of a Color</h2>
+            <p>Change the background-color of each div element based on the class names (green, cyan, or blue) using
+                hsl(). All three should have full saturation and normal lightness.</p>
+            <xmp>
+                Color: HSL
+                red: hsl(0, 100%, 50%)
+                yellow: hsl(60, 100%, 50%)
+                green: hsl(120, 100%, 50%)
+                cyan: hsl(180, 100%, 50%)
+                blue: hsl(240, 100%, 50%)
+                magenta: hsl(300, 100%, 50%)
+            </xmp>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: #FFFFFF;
+                    }
+
+                    .green {
+                        background-color: #000000;
+                    }
+
+                    .cyan {
+                        background-color: #000000;
+                    }
+
+                    .blue {
+                        background-color: #000000;
+                    }
+
+                    div {
+                        display: inline-block;
+                        height: 100px;
+                        width: 100px;
+                    }
+                </style>
+
+                <div class="green"></div>
+                <div class="cyan"></div>
+                <div class="blue"></div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: #FFFFFF;
+                    }
+
+                    .green {
+                        background-color: hsl(120, 100%, 50%);
+                    }
+
+                    .cyan {
+                        background-color: hsl(180, 100%, 50%);
+                    }
+
+                    .blue {
+                        background-color: hsl(240, 100%, 50%);
+                    }
+
+                    div {
+                        display: inline-block;
+                        height: 100px;
+                        width: 100px;
+                    }
+                </style>
+
+                <div class="green"></div>
+                <div class="cyan"></div>
+                <div class="blue"></div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

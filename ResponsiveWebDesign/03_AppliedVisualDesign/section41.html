@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>41. Use CSS Animation to Change the Hover State of a Button</h2>
+            <p>Note that ms stands for milliseconds, where 1000ms is equal to 1s.
+            </p>
+            <p>
+                Use CSS @keyframes to change the background-color of the button element so it becomes #4791d0 when a
+                user hovers over it. The @keyframes rule should only have an entry for 100%.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    button {
+                        border-radius: 5px;
+                        color: white;
+                        background-color: #0F5897;
+                        padding: 5px 10px 8px 10px;
+                    }
+
+                    button:hover {
+                        animation-name: background-color;
+                        animation-duration: 500ms;
+                    }
+                </style>
+
+                <button>Register</button>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    button {
+                        border-radius: 5px;
+                        color: white;
+                        background-color: #0F5897;
+                        padding: 5px 10px 8px 10px;
+                    }
+
+                    button:hover {
+                        animation-name: background-color;
+                        animation-duration: 500ms;
+                    }
+
+                    button:hover {
+                        animation-name: background-color;
+                        animation-duration: 500ms;
+                    }
+
+                    @keyframes background-color {
+                        100% {
+                            background-color: #4791d0;
+                        }
+                    }
+                </style>
+
+                <button>Register</button>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>39. Create a More Complex Shape Using CSS and HTMLPassed</h2>
+            <p>Transform the element on the screen to a heart. In the heart::after selector, change the background-color
+                to pink andthe border-radius to 50%.
+            </p>
+            <p>
+                Next, target the element with the class heart (just heart) and fill in the transform property. Use the
+                rotate() function with -45 degrees.
+            </p>
+            <p>
+                Finally, in the heart::before selector, set its content property to an empty string.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    .heart {
+                        position: absolute;
+                        margin: auto;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: pink;
+                        height: 50px;
+                        width: 50px;
+                        /* transform: ; */
+                    }
+
+                    .heart::after {
+                        background-color: blue;
+                        content: "";
+                        border-radius: 25%;
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        top: 0px;
+                        left: 25px;
+                    }
+
+                    .heart::before {
+                        /* content: ; */
+                        background-color: pink;
+                        border-radius: 50%;
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        top: -25px;
+                        left: 0px;
+                    }
+                </style>
+                <div class="heart"></div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    .heart {
+                        position: absolute;
+                        margin: auto;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: pink;
+                        height: 50px;
+                        width: 50px;
+                        transform: rotate(-45deg);
+                    }
+
+                    .heart::after {
+                        background-color: pink;
+                        content: "";
+                        border-radius: 50%;
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        top: 0px;
+                        left: 25px;
+                    }
+
+                    .heart::before {
+                        content: "";
+                        background-color: pink;
+                        border-radius: 50%;
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        top: -25px;
+                        left: 0px;
+                    }
+                </style>
+                <div class="heart"></div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

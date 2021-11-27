@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>28. Override Styles in Subsequent CSS</h2>
+            <p>Create an additional CSS class called blue-text that gives an element the color blue. Make sure it's
+                below your pink-text class declaration.</p>
+            <p>
+                Apply the blue-text class to your h1 element in addition to your pink-text class, and let's see which
+                one wins.
+            </p>
+            <p>
+                Applying multiple class attributes to a HTML element is done with a space between them like this:
+            </p>
+            <xmp>
+                class="class1 class2"
+            </xmp>
+            <p>
+                Note: It doesn't matter which order the classes are listed in the HTML element.
+            </p>
+            <p>
+                However, the order of the class declarations in the &lt;style&gt;
+                section is what is important. The second declaration will always take precedence over the first. Because
+                .blue-text is declared second,
+                it overrides the attributes of .pink-text</p>
+            </p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: black;
+                        font-family: monospace;
+                        color: green;
+                    }
+
+                    .pink-text {
+                        color: pink;
+                    }
+                </style>
+                <h1 class="pink-text">Hello World!</h1>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: black;
+                        font-family: monospace;
+                        color: green;
+                    }
+
+                    .pink-text {
+                        color: pink;
+                    }
+
+                    .blue-text {
+                        color: blue;
+                    }
+                </style>
+                <h1 class="pink-text blue-text">Hello World!</h1>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

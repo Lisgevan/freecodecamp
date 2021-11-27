@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>38. Create a Graphic Using CSS</h2>
+            <p>Manipulate the square element in the editor to create the moon shape. First, change the background-color
+                to transparent, then set the border-radius property to 50% to make the circular shape. Finally, change
+                the box-shadow property to set the offset-x to 25px, the offset-y to 10px, blur-radius to 0,
+                spread-radius to 0, and color to blue.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    .center {
+                        position: absolute;
+                        margin: auto;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 100px;
+                        height: 100px;
+                        background-color: blue;
+                        border-radius: 0px;
+                        box-shadow: 25px 10px 10px 10px green;
+                    }
+                </style>
+                <div class="center"></div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    .center {
+                        position: absolute;
+                        margin: auto;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 100px;
+                        height: 100px;
+                        background-color: transparent;
+                        border-radius: 50%;
+                        box-shadow: 25px 10px 0px 0px blue;
+                    }
+                </style>
+                <div class="center"></div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

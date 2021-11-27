@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>21. Lock an Element to its Parent with Absolute PositioningPassed</h2>
+            <p>Lock the #searchbar element to the top-right of its section parent by declaring its position as absolute.
+                Give it top and right offsets of 50 pixels each.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    #searchbar {}
+
+                    section {
+                        position: relative;
+                    }
+                </style>
+
+                <h1>Welcome!</h1>
+                <section>
+                    <form id="searchbar">
+                        <label for="search">Search:</label>
+                        <input type="search" id="search" name="search">
+                        <input type="submit" name="submit" value="Go!">
+                    </form>
+                </section>
+
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    #searchbar {
+                        position: absolute;
+                        top: 50px;
+                        right: 50px;
+                    }
+
+                    section {
+                        position: relative;
+                    }
+                </style>
+
+                <h1>Welcome!</h1>
+                <section>
+                    <form id="searchbar">
+                        <label for="search">Search:</label>
+                        <input type="search" id="search" name="search">
+                        <input type="submit" name="submit" value="Go!">
+                    </form>
+                </section>
+
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>23. Push Elements Left or Right with the float Property</h2>
+            <p>The given markup would work well as a two-column layout, with the section and aside elements next to each
+                other. Give the #left item a float of left and the #right item a float of right.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+
+                <head>
+                    <style>
+                        #left {
+
+                            width: 50%;
+                        }
+
+                        #right {
+
+                            width: 40%;
+                        }
+
+                        aside,
+                        section {
+                            padding: 2px;
+                            background-color: #ccc;
+                        }
+                    </style>
+                </head>
+
+                <header>
+                    <h1>Welcome!</h1>
+                </header>
+                <section id="left">
+                    <h2>Content</h2>
+                    <p>Good stuff</p>
+                </section>
+                <aside id="right">
+                    <h2>Sidebar</h2>
+                    <p>Links</p>
+                </aside>
+
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+
+                <head>
+                    <style>
+                        #left {
+                            float: left;
+                            width: 50%;
+                        }
+
+                        #right {
+                            float: right;
+                            width: 40%;
+                        }
+
+                        aside,
+                        section {
+                            padding: 2px;
+                            background-color: #ccc;
+                        }
+                    </style>
+                </head>
+
+                <header>
+                    <h1>Welcome!</h1>
+                </header>
+                <section id="left">
+                    <h2>Content</h2>
+                    <p>Good stuff</p>
+                </section>
+                <aside id="right">
+                    <h2>Sidebar</h2>
+                    <p>Links</p>
+                </aside>
+
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

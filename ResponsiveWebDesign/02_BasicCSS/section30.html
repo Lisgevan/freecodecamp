@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>30. Override Class Declarations with Inline StylesPassed</h2>
+            <p>Use an inline style to try to make our h1 element white. Remember, inline styles look like this:</p>
+            <xmp>
+                <h1 style="color: green;">
+            </xmp>
+            <p>
+                Leave the blue-text and pink-text classes on your h1 element.
+            </p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: black;
+                        font-family: monospace;
+                        color: green;
+                    }
+
+                    #orange-text {
+                        color: orange;
+                    }
+
+                    .pink-text {
+                        color: pink;
+                    }
+
+                    .blue-text {
+                        color: blue;
+                    }
+                </style>
+                <h1 id="orange-text" class="pink-text blue-text">Hello World!</h1>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    body {
+                        background-color: black;
+                        font-family: monospace;
+                        color: green;
+                    }
+
+                    #orange-text {
+                        color: orange;
+                    }
+
+                    .pink-text {
+                        color: pink;
+                    }
+
+                    .blue-text {
+                        color: blue;
+                    }
+                </style>
+                <h1 id="orange-text" class="pink-text blue-text" style="color:white;">Hello World!</h1>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

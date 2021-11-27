@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>43. Create Movement Using CSS AnimationPassed</h2>
+            <p>Add a horizontal motion to the div animation. Using the left offset property, add to the @keyframes rule
+                so rainbow starts at 0 pixels at 0%, moves to 25 pixels at 50%, and ends at -25 pixels at 100%. Don't
+                replace the top property in the editor - the animation should have both vertical and horizontal motion.
+            </p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    div {
+                        height: 40px;
+                        width: 70%;
+                        background: black;
+                        margin: 50px auto;
+                        border-radius: 5px;
+                        position: relative;
+                    }
+
+                    #rect {
+                        animation-name: rainbow;
+                        animation-duration: 4s;
+                    }
+
+                    @keyframes rainbow {
+                        0% {
+                            background-color: blue;
+                            top: 0px;
+
+                        }
+
+                        50% {
+                            background-color: green;
+                            top: 50px;
+
+                        }
+
+                        100% {
+                            background-color: yellow;
+                            top: 0px;
+
+                        }
+                    }
+                </style>
+
+                <div id="rect"></div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    div {
+                        height: 40px;
+                        width: 70%;
+                        background: black;
+                        margin: 50px auto;
+                        border-radius: 5px;
+                        position: relative;
+                    }
+
+                    #rect {
+                        animation-name: rainbow;
+                        animation-duration: 4s;
+                    }
+
+                    @keyframes rainbow {
+                        0% {
+                            background-color: blue;
+                            left: 0px;
+
+                        }
+
+                        50% {
+                            background-color: green;
+                            left: 25px;
+
+                        }
+
+                        100% {
+                            background-color: yellow;
+                            left: -25px;
+
+                        }
+                    }
+                </style>
+
+                <div id="rect"></div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

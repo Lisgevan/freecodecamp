@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic CSS</title>
+    </head>
+
+    <body>
+
+        <h1>Basic CSS</h1>
+        <hr>
+
+        <section>
+            <h2>51. Use a Bezier Curve to Move a Graphic</h2>
+            <p>To see the effect of this Bezier curve in action, change the animation-timing-function of the element
+                with id of red to a cubic-bezier function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1.
+                This will make both elements progress through the animation similarly.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    .balls {
+                        border-radius: 50%;
+                        position: fixed;
+                        width: 50px;
+                        height: 50px;
+                        margin-top: 50px;
+                        animation-name: bounce;
+                        animation-duration: 2s;
+                        animation-iteration-count: infinite;
+                    }
+
+                    #red {
+                        background: red;
+                        left: 27%;
+                        animation-timing-function: linear;
+                    }
+
+                    #blue {
+                        background: blue;
+                        left: 56%;
+                        animation-timing-function: ease-out;
+                    }
+
+                    @keyframes bounce {
+                        0% {
+                            top: 0px;
+                        }
+
+                        100% {
+                            top: 249px;
+                        }
+                    }
+                </style>
+                <div class="balls" id="red"></div>
+                <div class="balls" id="blue"></div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    .balls {
+                        border-radius: 50%;
+                        position: fixed;
+                        width: 50px;
+                        height: 50px;
+                        margin-top: 50px;
+                        animation-name: bounce;
+                        animation-duration: 2s;
+                        animation-iteration-count: infinite;
+                    }
+
+                    #red {
+                        background: red;
+                        left: 27%;
+                        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+                    }
+
+                    #blue {
+                        background: blue;
+                        left: 56%;
+                        animation-timing-function: ease-out;
+                    }
+
+                    @keyframes bounce {
+                        0% {
+                            top: 0px;
+                        }
+
+                        100% {
+                            top: 249px;
+                        }
+                    }
+                </style>
+                <div class="balls" id="red"></div>
+                <div class="balls" id="blue"></div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>
