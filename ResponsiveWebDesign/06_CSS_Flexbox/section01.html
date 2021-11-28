@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Flexbox</title>
+    </head>
+
+    <body>
+
+        <h1>CSS Flexbox</h1>
+        <hr>
+
+        <section>
+            <h2>01. Use display: flex to Position Two Boxes</h2>
+            <p>Add the CSS property display to #box-container and set its value to flex.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    #box-container {
+                        height: 500px;
+
+                    }
+
+                    #box-1 {
+                        background-color: dodgerblue;
+                        width: 50%;
+                        height: 50%;
+                    }
+
+                    #box-2 {
+                        background-color: orangered;
+                        width: 50%;
+                        height: 50%;
+                    }
+                </style>
+                <div id="box-container">
+                    <div id="box-1"></div>
+                    <div id="box-2"></div>
+                </div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    p {
+                        font-size: 20px;
+                    }
+
+                    /* Only change code below this line */
+                    @media (max-height: 800px) {
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+
+                    /* Only change code above this line */
+                </style>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl,
+                    gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis
+                    tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem.
+                    Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula
+                    ultricies diam, at aliquet velit libero a dui.</p>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

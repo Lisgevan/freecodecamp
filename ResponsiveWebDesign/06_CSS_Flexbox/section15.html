@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Flexbox</title>
+    </head>
+
+    <body>
+
+        <h1>CSS Flexbox</h1>
+        <hr>
+
+        <section>
+            <h2>15. Use the flex Shorthand PropertyPassed</h2>
+            <p>Add the CSS property flex to both #box-1 and #box-2. Give #box-1 the values so its flex-grow is 2, its
+                flex-shrink is 2, and its flex-basis is 150px. Give #box-2 the values so its flex-grow is 1, its
+                flex-shrink is 1, and its flex-basis is 150px.</p>
+            <p>
+                These values will cause #box-1 to grow to fill the extra space at twice the rate of #box-2 when the
+                container is greater than 300px and shrink at twice the rate of #box-2 when the container is less than
+                300px. 300px is the combined size of the flex-basis values of the two boxes.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    #box-container {
+                        display: flex;
+                        height: 500px;
+                    }
+
+                    #box-1 {
+                        background-color: dodgerblue;
+
+                        height: 200px;
+                    }
+
+                    #box-2 {
+                        background-color: orangered;
+
+                        height: 200px;
+                    }
+                </style>
+
+                <div id="box-container">
+                    <div id="box-1"></div>
+                    <div id="box-2"></div>
+                </div>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    #box-container {
+                        display: flex;
+                        height: 500px;
+                    }
+
+                    #box-1 {
+                        background-color: dodgerblue;
+                        flex: 2 2 150px;
+                        height: 200px;
+                    }
+
+                    #box-2 {
+                        background-color: orangered;
+                        flex: 1 1 150px;
+                        height: 200px;
+                    }
+                </style>
+
+                <div id="box-container">
+                    <div id="box-1"></div>
+                    <div id="box-2"></div>
+                </div>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>
