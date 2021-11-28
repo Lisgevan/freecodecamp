@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Applied Accessibility</title>
+    </head>
+
+    <body>
+
+        <h1>Applied Accessibility</h1>
+        <hr>
+
+        <section>
+            <h2>13. Add an Accessible Date Picker</h2>
+            <p>Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date
+                works best. Add an input tag with a type attribute of date, an id attribute of pickdate, and a name
+                attribute of date.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <header>
+                    <h1>Tournaments</h1>
+                </header>
+                <main>
+                    <section>
+                        <h2>Mortal Kombat Tournament Survey</h2>
+                        <form>
+                            <p>Tell us the best date for the competition</p>
+                            <label for="pickdate">Preferred Date:</label>
+
+                            <!-- Only change code below this line -->
+
+
+
+                            <!-- Only change code above this line -->
+
+                            <input type="submit" name="submit" value="Submit">
+                        </form>
+                    </section>
+                </main>
+                <footer>&copy; 2018 Camper Cat</footer>
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <header>
+                    <h1>Tournaments</h1>
+                </header>
+                <main>
+                    <section>
+                        <h2>Mortal Kombat Tournament Survey</h2>
+                        <form>
+                            <p>Tell us the best date for the competition</p>
+                            <label for="pickdate">Preferred Date:</label>
+
+                            <!-- Only change code below this line -->
+
+                            <input type="date" id="pickdate" name="date">
+
+                            <!-- Only change code above this line -->
+
+                            <input type="submit" name="submit" value="Submit">
+                        </form>
+                    </section>
+                </main>
+                <footer>&copy; 2018 Camper Cat</footer>
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

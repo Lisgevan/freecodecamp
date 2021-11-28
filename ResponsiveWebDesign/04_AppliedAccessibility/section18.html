@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Applied Accessibility</title>
+    </head>
+
+    <boby>
+
+        <h1>Applied Accessibility</h1>
+        <hr>
+
+        <section>
+            <h2>18. Avoid Colorblindness Issues by Carefully Choosing Colors that Convey InformationPassed</h2>
+            <p>Camper Cat is testing different styles for an important button, but the yellow (#FFFF33) background-color
+                and the green (#33FF33) text color are neighboring hues on the color wheel and virtually
+                indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio
+                check). Change the text color to a dark blue (#003366) to solve both problems.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+
+                <head>
+                    <style>
+                        button {
+                            color: #33FF33;
+                            background-color: #FFFF33;
+                            font-size: 14px;
+                            padding: 10px;
+                        }
+                    </style>
+                </head>
+
+                <header>
+                    <h1>Danger!</h1>
+                </header>
+                <button>Delete Internet</button>
+
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    button {
+                        color: #003366;
+                        background-color: #FFFF33;
+                        font-size: 14px;
+                        padding: 10px;
+                    }
+                </style>
+                </head>
+
+                <body>
+                    <header>
+                        <h1>Danger!</h1>
+                    </header>
+                    <button>Delete Internet</button>
+            </xmp>
+            <hr>
+        </section>
+
+        </body>
+
+</html>
