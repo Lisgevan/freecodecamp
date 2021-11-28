@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Web Design Principles</title>
+    </head>
+
+    <body>
+
+        <h1>Responsive Web Design Principles</h1>
+        <hr>
+
+        <section>
+            <h2>02. Make an Image Responsive</h2>
+            <p>Add the style rules to the responsive-img class to make it responsive. It should never be wider than its
+                container (in this case, it's the preview window) and it should keep its original aspect ratio. After
+                you have added your code, resize the preview to see how your images behave.</p>
+            <h3>Starter Code:</h3>
+            <xmp>
+                <style>
+                    .responsive-img {}
+
+                    img {
+                        width: 600px;
+                    }
+                </style>
+
+                <img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg"
+                     alt="freeCodeCamp stickers set">
+                <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
+            </xmp>
+            <h3>Solution:</h3>
+            <xmp>
+                <style>
+                    .responsive-img {
+                        max-width: 100%;
+                        height: auto;
+
+                    }
+
+                    img {
+                        width: 600px;
+                    }
+                </style>
+
+                <img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg"
+                     alt="freeCodeCamp stickers set">
+                <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">A
+            </xmp>
+            <hr>
+        </section>
+
+    </body>
+
+</html>

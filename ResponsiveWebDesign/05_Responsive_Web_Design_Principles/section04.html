@@ -14,21 +14,16 @@
         <hr>
 
         <section>
-            <h2>01. Create a Media Query</h2>
-            <p>Add a media query, so that the p tag has a font-size of 10px when the device's height is less than or
-                equal to 800px.</p>
+            <h2>04. Make Typography Responsive</h2>
+            <p>Set the width of the h2 tag to 80% of the viewport's width and the width of the paragraph as 75% of the
+                viewport's smaller dimension.</p>
             <h3>Starter Code:</h3>
             <xmp>
                 <style>
-                    p {
-                        font-size: 20px;
-                    }
 
-                    /* Only change code below this line */
-
-                    /* Only change code above this line */
                 </style>
 
+                <h2>Importantus Ipsum</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl,
                     gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis
                     tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem.
@@ -38,20 +33,16 @@
             <h3>Solution:</h3>
             <xmp>
                 <style>
+                    h2 {
+                        width: 80vw;
+                    }
+
                     p {
-                        font-size: 20px;
+                        width: 75vmin;
                     }
-
-                    /* Only change code below this line */
-                    @media (max-height: 800px) {
-                        p {
-                            font-size: 10px;
-                        }
-                    }
-
-                    /* Only change code above this line */
                 </style>
 
+                <h2>Importantus Ipsum</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl,
                     gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis
                     tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem.
