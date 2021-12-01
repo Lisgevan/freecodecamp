@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Tailwind CSS -->
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+        <style>
+            .accordion {
+                width: 100%;
+            }
+
+            .panel {
+                display: none;
+                overflow: hidden;
+            }
+        </style>
+
+        <title>Basic JavaScript</title>
+    </head>
+
+    <body>
+
+        <!-- component -->
+        <!-- This is an example component -->
+
+        <div class='flex w-screen w-full bg-white shadow-md rounded-lg overflow-hidden mx-auto'>
+
+
+            <div class="bg-gray-300 w-screen mx-auto my-2">
+
+                <h2 class="bg-dark-800 p-4 text-center font-black">Free Code Camp</h2>
+                <button
+                        class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">JavaScript
+                    Algorithms and Data Stractures</button>
+                <div class="panel bg-blue-100 p-4">
+                    <!-- component -->
+                    <!-- This is an example component -->
+
+                    <div class='flex w-screen w-full bg-white shadow-md rounded-lg overflow-hidden mx-auto'>
+
+
+                        <div class="bg-blue-200 w-screen  mx-auto my-2">
+
+                            <button
+                                    class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">Basic
+                                JavaScript</button>
+                            <div class="panel bg-blue-100 p-4 js-basicJavaScript">
+
+                            </div>
+
+                            <button
+                                    class="border-solid border-4 border-light-blue-500 text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">ES6</button>
+                            <div class="panel bg-blue-100 p-4 js-ES6">
+                                <p>CODE INJECT HERE</p>
+                            </div>
+
+                            <button
+                                    class="border-solid border-4 border-light-blue-500 text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">Section
+                                3</button>
+                            <div class="panel bg-blue-100 p-4">
+                                <p>CODE INJECT HERE</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button
+                        class="border-solid border-4 border-light-blue-500 text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">Section
+                    2</button>
+                <div class="panel bg-blue-100 p-4">
+                    <p>Lorem ipsum </p>
+                </div>
+
+                <button
+                        class="border-solid border-4 border-light-blue-500 text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm">Section
+                    3</button>
+                <div class="panel bg-blue-100 p-4">
+                    <p>Lorem ipsum </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="basicJavaScript.js"></script>
+        <script>
+
+            var accordElement = document.getElementsByClassName( "accordion" );
+
+            for ( i = 0; i < accordElement.length; i++ ) {
+                accordElement[ i ].addEventListener( "click", function () {
+                    this.classList.toggle( "active" );
+                    var panel = this.nextElementSibling;
+                    if ( panel.style.display === "block" ) {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                } );
+            }
+        </script>
+    </body>
+
+</html>
