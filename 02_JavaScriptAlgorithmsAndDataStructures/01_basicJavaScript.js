@@ -20,10 +20,10 @@ const basicJavaScript = document.querySelector(".js-basicJavaScript");
 // const outcomeEL = document.querySelector("#js-outcome");
 // const titleEL = document.querySelector("#js-title");
 
-const showResult = result => {
+const basivJavaScriptResults = result => {
 	// console.dir(result[0]["section"]);
 	for (let item of result) {
-		console.dir(item["section"]);
+		// console.dir(item["section"]);
 		basicJavaScript.innerHTML += `
         <button
                 class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm"><div>Section-${
@@ -58,7 +58,7 @@ const showResult = result => {
 // 	}
 // };
 
-const basicJavaScipt = [
+const basicJavaSciptList = [
 	{
 		section: 01,
 		title: `Comment Your JavaScript Code`,
@@ -2984,4 +2984,4 @@ const basicJavaScipt = [
 	},
 ];
 
-showResult(basicJavaScipt);
+basivJavaScriptResults(basicJavaSciptList);
