@@ -23,7 +23,7 @@ const regex = document.querySelector(".js-regex");
 const regexResults = result => {
 	// console.dir(result[0]["section"]);
 	for (let item of result) {
-		console.dir(item["section"]);
+		// console.dir(item["section"]);
 		regex.innerHTML += `
         <button
                 class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm"><div>Section-${
@@ -533,16 +533,10 @@ const regexList = [
 		section: 31,
 		title: `Reuse Patterns Using Capture Groups`,
 		exercise: `Use capture groups in reRegex to match a string that consists of only the same number repeated exactly three times separated by single spaces.`,
-		starterCode: `
-        let repeatNum = "42 42 42";
-        let reRegex = /change/; // Change this line
-        let result = reRegex.test(repeatNum);
-        `,
-		solution: `
-        let repeatNum = "42 42 42";
-        let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
-        let result = reRegex.test(repeatNum);
-        `,
+		starterCode:
+			'\nlet repeatNum = "42 42 42";\n let reRegex = /change/; // Change this line\n let result = reRegex.test(repeatNum);\n ',
+		solution:
+			'\n let repeatNum = "42 42 42";\n let reRegex = /^(d+)s\\1s\\1$/; // Change this line\n let result = reRegex.test(repeatNum);\n ',
 	},
 	{
 		section: 32,

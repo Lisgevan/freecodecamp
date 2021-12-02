@@ -23,7 +23,7 @@ const debug = document.querySelector(".js-debug");
 const debugResults = result => {
 	// console.dir(result[0]["section"]);
 	for (let item of result) {
-		console.dir(item["section"]);
+		// console.dir(item["section"]);
 		debug.innerHTML += `
         <button
                 class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm"><div>Section-${
@@ -122,33 +122,19 @@ const debugList = [
 		section: 04,
 		title: `Catch Misspelled Variable and Function Names`,
 		exercise: `Fix the two spelling errors in the code so the netWorkingCapital calculation works.`,
-		starterCode: `
-        let receivables = 10;
-        let payables = 8;
-        let netWorkingCapital = recievables - payable;
-        console.log(``Net working capital is: ${netWorkingCapital}``);
-        `,
-		solution: `
-        let receivables = 10;
-        let payables = 8;
-        let netWorkingCapital = receivables - payables;
-        console.log(``Net working capital is: ${netWorkingCapital}``);
-        `,
+		starterCode:
+			"\n let receivables = 10;\n let payables = 8;\n let netWorkingCapital = recievables - payable;\n console.log('Net working capital is: $\n{netWorkingCapital}');\n ",
+		solution:
+			"\n let receivables = 10;\n let payables = 8;\n let netWorkingCapital = receivables - payables;\n console.log(``Net working capital is: $\n  {netWorkingCapital}`);\n ",
 	},
 	{
 		section: 05,
 		title: `Catch Unclosed Parentheses, Brackets, Braces and Quotes`,
 		exercise: `Fix the two pair errors in the code.`,
-		starterCode: `
-        let myArray = [1, 2, 3;
-        let arraySum = myArray.reduce((previous, current =>  previous + current);
-        console.log(``Sum of array values is: ${arraySum}``);
-        `,
-		solution: `
-        let myArray = [1, 2, 3];
-        let arraySum = myArray.reduce((previous, current) =>  previous + current);
-        console.log(``Sum of array values is: ${arraySum}``);
-        `,
+		starterCode:
+			"\n let myArray = [1, 2, 3;\n let arraySum = myArray.reduce((previous, current =>  previous + current);\n console.log(`Sum of array values is: ${arraySum}``);\n ",
+		solution:
+			"\n let myArray = [1, 2, 3];\n let arraySum = myArray.reduce((previous, current) =>  previous + current);\n console.log(`Sum of array values is: ${arraySum}``);\n ",
 	},
 	{
 		section: 06,
