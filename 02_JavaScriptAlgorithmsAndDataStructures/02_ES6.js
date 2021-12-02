@@ -23,7 +23,7 @@ const es6 = document.querySelector(".js-ES6");
 const es6Results = result => {
 	// console.dir(result[0]["section"]);
 	for (let item of result) {
-		console.dir(item["section"]);
+		// console.dir(item["section"]);
 		es6.innerHTML += `
         <button
                 class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm"><div>Section-${
