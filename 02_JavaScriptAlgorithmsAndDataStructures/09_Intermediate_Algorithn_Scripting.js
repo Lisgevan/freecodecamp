@@ -16,15 +16,15 @@
 
 //--------------------------------------------//
 */
-const fp = document.querySelector(".js-fp");
+const ias = document.querySelector(".js-ias");
 // const outcomeEL = document.querySelector("#js-outcome");
 // const titleEL = document.querySelector("#js-title");
 
-const fpResults = result => {
+const iasResults = result => {
 	// console.dir(result[0]["section"]);
 	for (let item of result) {
 		console.dir(item["section"]);
-		fp.innerHTML += `
+		ias.innerHTML += `
         <button
                 class="border-solid border-4 border-light-blue-500  text-center accordion p-4 font-black bg-gray-400 hover:bg-red-700 rounded-sm"><div>Section-${
 					item["section"] < 10 ? "0" + item["section"] : item["section"]
@@ -58,1559 +58,697 @@ const fpResults = result => {
 // 	}
 // };
 
-const fpList = [
+const iasList = [
 	{
 		section: 01,
-		title: `Learn About Functional Programming`,
-		exercise: `The members of freeCodeCamp happen to love tea.
+		title: `Sum All Numbers in a Range`,
+		exercise: `We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
 
-		In the code editor, the prepareTea and getTea functions are already defined for you. Call the getTea function to get 40 cups of tea for the team, and store them in the tea4TeamFCC variable.`,
+		For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.`,
 		starterCode: `
-		// Function that returns a string representing a cup of green tea
-		const prepareTea = () => 'greenTea';
+		function sumAll(arr) {
+			return 1;
+		}
 
-		/*
-		Given a function (representing the tea type) and number of cups needed, the
-		following function returns an array of strings (each representing a cup of
-		a specific type of tea).
-		*/
-		const getTea = (numOfCups) => {
-			const teaCups = [];
-
-			for(let cups = 1; cups <= numOfCups; cups += 1) {
-				const teaCup = prepareTea();
-				teaCups.push(teaCup);
-			}
-			return teaCups;
-		};
-
-		// Only change code below this line
-		const tea4TeamFCC = null;
-		// Only change code above this line
+		sumAll([1, 4]);
 		`,
 		solution: `
-		// Function that returns a string representing a cup of green tea
-		const prepareTea = () => 'greenTea';
-
-		/*
-		Given a function (representing the tea type) and number of cups needed, the
-		following function returns an array of strings (each representing a cup of
-		a specific type of tea).
-		*/
-		const getTea = (numOfCups) => {
-			const teaCups = [];
-
-			for(let cups = 1; cups <= numOfCups; cups += 1) {
-				const teaCup = prepareTea();
-				teaCups.push(teaCup);
+		function sumAll(arr) {
+			arr.sort((a,b)=>a-b)
+			let sum = 0
+			for(let i=arr[0]; i<=arr[1]; i++){
+				sum+=i
 			}
-			return teaCups;
-		};
+			return sum;
+		}
 
-		// Only change code below this line
-		const tea4TeamFCC = getTea(40);
-		// Only change code above this line
+		sumAll([1, 4]);
 		`,
 	},
 	{
 		section: 02,
-		title: `Understand Functional Programming Terminology`,
-		exercise: `Prepare 27 cups of green tea and 13 cups of black tea and store them in tea4GreenTeamFCC and tea4BlackTeamFCC variables, respectively. Note that the getTea function has been modified so it now takes a function as the first argument.`,
+		title: `Diff Two Arrays`,
+		exercise: `Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+
+		Note: You can return the array with its elements in any order.`,
 		starterCode: `
-		// Function that returns a string representing a cup of green tea
-		const prepareGreenTea = () => 'greenTea';
+		function diffArray(arr1, arr2) {
+			const newArr = [];
+			return newArr;
+		}
 
-		// Function that returns a string representing a cup of black tea
-		const prepareBlackTea = () => 'blackTea';
-
-		/*
-		Given a function (representing the tea type) and number of cups needed, the
-		following function returns an array of strings (each representing a cup of
-		a specific type of tea).
-		*/
-		const getTea = (prepareTea, numOfCups) => {
-			const teaCups = [];
-
-			for(let cups = 1; cups <= numOfCups; cups += 1) {
-				const teaCup = prepareTea();
-				teaCups.push(teaCup);
-			}
-			return teaCups;
-		};
-
-		// Only change code below this line
-		const tea4GreenTeamFCC = null;
-		const tea4BlackTeamFCC = null;
-		// Only change code above this line
-
-		console.log(
-		tea4GreenTeamFCC,
-		tea4BlackTeamFCC
-		);
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 		`,
 		solution: `
-		// Function that returns a string representing a cup of green tea
-		const prepareGreenTea = () => 'greenTea';
-
-		// Function that returns a string representing a cup of black tea
-		const prepareBlackTea = () => 'blackTea';
-
-		/*
-		Given a function (representing the tea type) and number of cups needed, the
-		following function returns an array of strings (each representing a cup of
-		a specific type of tea).
-		*/
-		const getTea = (prepareTea, numOfCups) => {
-			const teaCups = [];
-
-			for(let cups = 1; cups <= numOfCups; cups += 1) {
-				const teaCup = prepareTea();
-				teaCups.push(teaCup);
+		function diffArray(arr1, arr2) {
+			const newArr = [];
+			const arr3 = [...arr1, ...arr2]
+			for(let i of arr3){
+				if(!arr1.includes(i)||!arr2.includes(i))newArr.push(i)
 			}
-			return teaCups;
-		};
+			return newArr;
+		}
 
-		// Only change code below this line
-		const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
-		const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
-		// Only change code above this line
-
-		console.log(
-		tea4GreenTeamFCC,
-		tea4BlackTeamFCC
-		);
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 		`,
 	},
 	{
 		section: 03,
-		title: `Understand the Hazards of Using Imperative Code`,
-		exercise: `Examine the code in the editor. It's using a method that has side effects in the program, causing incorrect behaviour. The final list of open tabs, stored in finalTabs.tabs, should be ['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab'] but the list produced by the code is slightly different.
+		title: `Seek and Destroy`,
+		exercise: `You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 
-		Change Window.prototype.tabClose so that it removes the correct tab.`,
+		Note: You have to use the arguments object.`,
 		starterCode: `
-		// tabs is an array of titles of each site open within the window
-		const Window = function(tabs) {
-			this.tabs = tabs; // We keep a record of the array inside the object
-		};
+		function destroyer(arr) {
+			return arr;
+		}
 
-		// When you join two windows into one window
-		Window.prototype.join = function(otherWindow) {
-			this.tabs = this.tabs.concat(otherWindow.tabs);
-			return this;
-		};
-
-		// When you open a new tab at the end
-		Window.prototype.tabOpen = function(tab) {
-			this.tabs.push('new tab'); // Let's open a new tab for now
-			return this;
-		};
-
-		// When you close a tab
-		Window.prototype.tabClose = function(index) {
-
-		// Only change code below this line
-
-		const tabsBeforeIndex = this.tabs.splice(0, index); // Get the tabs before the tab
-		const tabsAfterIndex = this.tabs.splice(index + 1); // Get the tabs after the tab
-
-		this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // Join them together
-
-		// Only change code above this line
-
-		return this;
-		};
-
-		// Let's create three browser windows
-		const workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites
-		const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites
-		const videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); // Entertainment sites
-
-		// Now perform the tab opening, closing, and other operations
-		const finalTabs = socialWindow
-			.tabOpen() // Open a new tab for cat memes
-			.join(videoWindow.tabClose(2)) // Close third tab in video window, and join
-			.join(workWindow.tabClose(1).tabOpen());
-			console.log(finalTabs.tabs);
+		destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 		`,
 		solution: `
-		// tabs is an array of titles of each site open within the window
-		const Window = function(tabs) {
-			this.tabs = tabs; // We keep a record of the array inside the object
-		};
+		function destroyer(arr) {
+			return arr.filter(item=>![...arguments].includes(item));
+		}
 
-		// When you join two windows into one window
-		Window.prototype.join = function(otherWindow) {
-			this.tabs = this.tabs.concat(otherWindow.tabs);
-		return this;
-		};
-
-		// When you open a new tab at the end
-		Window.prototype.tabOpen = function(tab) {
-			this.tabs.push('new tab'); // Let's open a new tab for now
-		return this;
-		};
-
-		// When you close a tab
-		Window.prototype.tabClose = function(index) {
-
-		// Only change code below this line
-
-		const tabsBeforeIndex = this.tabs.slice(0, index); // Get the tabs before the tab
-		const tabsAfterIndex = this.tabs.slice(index + 1); // Get the tabs after the tab
-
-		this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // Join them together
-
-		// Only change code above this line
-
-		return this;
-		};
-
-		// Let's create three browser windows
-		const workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites
-		const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites
-		const videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); // Entertainment sites
-
-		// Now perform the tab opening, closing, and other operations
-		const finalTabs = socialWindow
-		.tabOpen() // Open a new tab for cat memes
-		.join(videoWindow.tabClose(2)) // Close third tab in video window, and join
-		.join(workWindow.tabClose(1).tabOpen());
-		console.log(finalTabs.tabs);
+		destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 		`,
 	},
 	{
 		section: 04,
-		title: `Avoid Mutations and Side Effects Using Functional Programming`,
-		exercise: `Fill in the code for the function incrementer so it returns the value of the global variable fixedValue increased by one.`,
-		starterCode: `
-		// The global variable
-			let fixedValue = 4;
+		title: `Wherefore art thou`,
+		exercise: `Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
 
-			function incrementer() {
+		For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.`,
+		starterCode: `
+		function whatIsInAName(collection, source) {
+			const arr = [];
 			// Only change code below this line
 
 
 			// Only change code above this line
+			return arr;
 		}
+
+		whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 		`,
 		solution: `
-		// The global variable
-			let fixedValue = 4;
-
-			function incrementer() {
+		function whatIsInAName(collection, source) {
+			const arr = [];
 			// Only change code below this line
-			return fixedValue + 1;
-
+			const keys = Object.keys(source)
+			console.log(keys)
+			for(let i of collection){
+				keys.every(key=>i[key]===source[key])?arr.push(i):""
+			}
 			// Only change code above this line
+			return arr;
 		}
+
+		console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 		`,
 	},
 	{
 		section: 05,
-		title: `Pass Arguments to Avoid External Dependence in a Function`,
-		exercise: `Let's update the incrementer function to clearly declare its dependencies.
-
-		Write the incrementer function so it takes an argument, and then returns a result after increasing the value by one.`,
+		title: `Spinal Tap Case`,
+		exercise: `Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.`,
 		starterCode: `
-		// The global variable
-		let fixedValue = 4;
-
-		// Only change code below this line
-		function incrementer() {
-
-
-		// Only change code above this line
+		function spinalCase(str) {
+			return str;
 		}
+
+		spinalCase('This Is Spinal Tap');
 		`,
 		solution: `
-		// The global variable
-		let fixedValue = 4;
-
-		// Only change code below this line
-		function incrementer(value) {
-			return value + 1
-
-		// Only change code above this line
+		function spinalCase(str) {
+			str = str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase()
+			console.log(str)
+			return str;
 		}
+
+		spinalCase('This Is Spinal Tap');
 		`,
 	},
 	{
 		section: 06,
-		title: `Refactor Global Variables Out of Functions`,
-		exercise: `Rewrite the code so the global array bookList is not changed inside either function. The add function should add the given bookName to the end of the array passed to it and return a new array (list). The remove function should remove the given bookName from the array passed to it.
+		title: `Pig Latin`,
+		exercise: `Pig Latin is a way of altering English Words. The rules are as follows:
 
-		Note: Both functions should return an array, and any new parameters should be added before the bookName parameter.`,
+		- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add ay to it.
+
+		- If a word begins with a vowel, just add way at the end.
+
+		Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.`,
 		starterCode: `
-		// The global variable
-		const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
-
-		// Change code below this line
-		function add (bookName) {
-
-			bookList.push(bookName);
-			return bookList;
-			
-			// Change code above this line
+		function translatePigLatin(str) {
+			return str;
 		}
 
-		// Change code below this line
-		function remove (bookName) {
-			const book_index = bookList.indexOf(bookName);
-			if (book_index >= 0) {
-
-				bookList.splice(book_index, 1);
-				return bookList;
-
-		// Change code above this line
-			}
-		}
-
-		const newBookList = add(bookList, 'A Brief History of Time');
-		const newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-		const newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
-
-		console.log(bookList);
+		translatePigLatin("consonant");
 		`,
 		solution: `
-		// The global variable
-		const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+		function translatePigLatin(str) {
+			let regex = /^[^aeoiuAEOIU]+/;
 
-		// Change code below this line
-		function add (obj, bookName) {
-			const tempBookList = obj.slice(0)
-			tempBookList.push(bookName);
-			return tempBookList;
-		// Change code above this line
+			if (regex.test(str)) {
+				// console.log(str.find(regex));
+				return str.replace(regex, "") + str.match(regex) + "ay";
+			}
+			return str + "way";
 		}
 
-		// Change code below this line
-		function remove (obj, bookName) {
-			const tempBookList = obj.slice(0)
-			const book_index = tempBookList.indexOf(bookName);
-			if (book_index >= 0) {
-				tempBookList.splice(book_index, 1);
-				return tempBookList;
-				// Change code above this line
-				}
-		} 
-
-		const newBookList = add(bookList, 'A Brief History of Time');
-		const newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-		const newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
-
-		console.log(bookList);
+		translatePigLatin("consonant");
 		`,
 	},
 	{
 		section: 07,
-		title: `Use the map Method to Extract Data from an Array`,
-		exercise: `The watchList array holds objects with information on several movies. Use map on watchList to assign a new array of objects to the ratings variable. Each movie in the new array should have only a title key with the name of the film, and a rating key with the IMDB rating. The code in the editor currently uses a for loop to do this, so you should replace the loop functionality with your map expression.`,
+		title: `Search and Replace`,
+		exercise: `Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+
+		First argument is the sentence to perform the search and replace on.
+
+		Second argument is the word that you will be replacing (before).
+
+		Third argument is what you will be replacing the second argument with (after).
+
+		Note: Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word Book with the word dog, it should be replaced as Dog`,
 		starterCode: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
-		}
-		];
-
-		// Only change code below this line
-
-		const ratings = [];
-		for (let i = 0; i < watchList.length; i++) {
-			ratings.push({title: watchList[i]["Title"], rating: watchList[i]["imdbRating"]});
+		function myReplace(str, before, after) {
+			return str;
 		}
 
-		// Only change code above this line
-
-		console.log(JSON.stringify(ratings));
+		myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 		`,
 		solution: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
+		function myReplace(str, before, after) {
+			const isCap = /^[A-Z]/
+			if (isCap.test(before)){
+				if(!isCap.test(after)){
+				after=after.split('')
+				after[0]=after[0].toUpperCase()
+				after=after.join('')
+				}
+			}else{after=after.toLowerCase()}
+
+			str = str.replace(before, after)
+
+			
+			return str;
 		}
-		];
 
-		// Only change code below this line
-
-		const ratings = [];
-		watchList.map((item)=>{
-			ratings.push({title: item["Title"], rating: item["imdbRating"]})
-		})
-
-		// Only change code above this line
-
-		console.log(JSON.stringify(ratings));
+		myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped")
 		`,
 	},
 	{
 		section: 08,
-		title: `Implement map on a Prototype`,
-		exercise: `Write your own Array.prototype.myMap(), which should behave exactly like Array.prototype.map(). You should not use the built-in map method. The Array instance can be accessed in the myMap method using this.`,
+		title: `DNA Pairing`,
+		exercise: `The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+		Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+
+		Return the provided character as the first element in each array.
+
+		For example, for the input GCG, return [["G", "C"], ["C","G"], ["G", "C"]]
+
+		The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.`,
 		starterCode: `
-		// The global variable
-		const s = [23, 65, 98, 5];
+		function pairElement(str) {
+			return str;
+		}
 
-		Array.prototype.myMap = function(callback) {
-			const newArray = [];
-			// Only change code below this line
-
-			// Only change code above this line
-			return newArray;
-			};
-
-			const new_s = s.myMap(function(item) {
-			return item * 2;
-		});
+		pairElement("GCG");
 		`,
 		solution: `
-		// The global variable
-		const s = [23, 65, 98, 5];
+		function pairElement(str) {
+			const result = []
+			for (let l of str){
+				console.log(l)
+				switch (l){
+				case 'A':
+					result.push(['A', 'T'])
+					break;
+				case 'T':
+					result.push(['T', 'A'])
+					break;
+				case 'C':
+					result.push(['C', 'G'])
+					break;
+				case 'G':
+					result.push(['G', 'C'])
+				}
+			}
+			return result;
+		}
 
-		Array.prototype.myMap = function(callback) {
-			const newArray = [];
-			// Only change code below this line
-
-			for (let i = 0; i < s.length; i++) {
-						newArray.push(callback(s[i]));
-					}
-
-			// Only change code above this line
-			return newArray;
-			};
-
-			const new_s = s.myMap(function(item) {
-			return item * 2;
-		});
+		console.log(pairElement("GCG"));
 		`,
 	},
 	{
 		section: 09,
-		title: `Use the filter Method to Extract Data from an Array`,
-		exercise: `The variable watchList holds an array of objects with information on several movies. Use a combination of filter and map on watchList to assign a new array of objects with only title and rating keys. The new array should only include objects where imdbRating is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.`,
+		title: `Missing letters`,
+		exercise: `Find the missing letter in the passed letter range and return it.
+
+		If all letters are present in the range, return undefined.`,
 		starterCode: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
+		function fearNotLetter(str) {
+			return str;
 		}
-		];
 
-		// Only change code below this line
-
-		const filteredList = "";
-
-		// Only change code above this line
-
-		console.log(filteredList);
+		fearNotLetter("abce");
 		`,
 		solution: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
+		function fearNotLetter(str) {
+			const abc = "abcdefghijklmnopqrstuvwxyz".split('')
+
+			const index = abc.indexOf(str[0])
+
+			for (let i=0; i<str.length; i++){
+				if(abc[index+i]!==str[i]){
+				return abc[index+i]
+				}   
+			}
+			return undefined;
 		}
-		];
 
-		// Only change code below this line
-
-		const filteredList = watchList
-			.filter((item)=>item.imdbRating>=8.0)
-			.map((item)=>{
-				return{
-					title: item.Title,
-					rating: item.imdbRating,
-				}
-			});
-
-		// Only change code above this line
-
-		console.log(filteredList);
+		console.log(fearNotLetter("abce"));
 		`,
 	},
 	{
 		section: 10,
-		title: `Implement the filter Method on a Prototype`,
-		exercise: `Write your own Array.prototype.myFilter(), which should behave exactly like Array.prototype.filter(). You should not use the built-in filter method. The Array instance can be accessed in the myFilter method using this.`,
+		title: `Sorted Union`,
+		exercise: `Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+		In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+		The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+		Check the assertion tests for examples.`,
 		starterCode: `
-		// The global variable
-		const s = [23, 65, 98, 5];
+		function uniteUnique(arr) {
+			return arr;
+		}
 
-		Array.prototype.myFilter = function(callback) {
-			// Only change code below this line
-			const newArray = [];
-			// Only change code above this line
-			return newArray;
-		};
-
-		const new_s = s.myFilter(function(item) {
-		return item % 2 === 1;
-		});
+		uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 		`,
 		solution: `
-		// The global variable
-		const s = [23, 65, 98, 5];
+		function uniteUnique(arr) {
+			const tempArr = [...arguments].reduce((acc, item)=>acc.concat(item), [])
+			const result = [];
 
-		Array.prototype.myFilter = function(callback) {
-			// Only change code below this line
-			const newArray = [];
-			for(let i=0; i<s.length; i++){
-				callback(s[i])?newArray.push(s[i]):""
-				
+			for (let n of tempArr){
+				result.indexOf(n)===-1?result.push(n):""
 			}
-			// Only change code above this line
-			return newArray;
-		};
+			return result;
+		}
 
-		const new_s = s.myFilter(function(item) {
-		return item % 2 === 1;
-		});
+		console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 		`,
 	},
 	{
 		section: 11,
-		title: `Return Part of an Array Using the slice Method`,
-		exercise: `Use the slice method in the sliceArray function to return part of the anim array given the provided beginSlice and endSlice indices. The function should return an array.`,
+		title: `Convert HTML Entities`,
+		exercise: ``,
 		starterCode: `
-		function sliceArray(anim, beginSlice, endSlice) {
-			// Only change code below this line
-
-
-			// Only change code above this line
+		function convertHTML(str) {
+			
+			return str;
 		}
 
-		const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
-		sliceArray(inputAnim, 1, 3);
+		convertHTML("Dolce & Gabbana");
 		`,
 		solution: `
-		function sliceArray(anim, beginSlice, endSlice) {
-			// Only change code below this line
-			return anim.slice(beginSlice, endSlice)
+		function convertHTML(str) {
+			let strList = str.split("")
 
-			// Only change code above this line
+			for (let i = 0; i < strList.length; i++) {
+				switch (strList[i]) {
+				case "<":
+					strList[i] = "&lt;";
+					break;
+				case "&":
+					strList[i] = "&amp;";
+					break;
+				case ">":
+					strList[i] = "&gt;";
+					break;
+				case '"':
+					strList[i] = "&quot;";
+					break;
+				case "'":
+					strList[i] = "&apos;";
+					break;
+				}
+			}
+
+			strList = strList.join("")
+
+			return strList;
 		}
 
-		const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
-		sliceArray(inputAnim, 1, 3);
+		convertHTML("Dolce & Gabbana");
 		`,
 	},
 	{
 		section: 12,
-		title: `Remove Elements from an Array Using slice Instead of splice`,
-		exercise: `Rewrite the function nonMutatingSplice by using slice instead of splice. It should limit the provided cities array to a length of 3, and return a new array with only the first three items.
+		title: `Sum All Odd Fibonacci Numbers`,
+		exercise: `Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
 
-		Do not mutate the original array provided to the function.`,
+		The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+		For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.`,
 		starterCode: `
-		function nonMutatingSplice(cities) {
-			// Only change code below this line
-			return cities.splice(3);
-
-			// Only change code above this line
+		function sumFibs(num) {
+			return num;
 		}
 
-		const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-		nonMutatingSplice(inputCities);
+		sumFibs(4);
 		`,
 		solution: `
-		function nonMutatingSplice(cities) {
-			// Only change code below this line
-			return cities.slice(0,3);
+		//I do not agree with the answer CHECK IT OUT
+		function sumFibs(num) {
+			let prevNumber = 0;
+			let currNumber = 1;
+			let result = 0;
+			while (currNumber <= num) {
+				if (currNumber % 2 !== 0) {
+				result += currNumber;
+				}
+				currNumber += prevNumber;
+				prevNumber = currNumber - prevNumber;
+			}
 
-			// Only change code above this line
+			return result;
 		}
 
-		const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-		nonMutatingSplice(inputCities);
+		// test here
+		sumFibs(4);
 		`,
 	},
 	{
 		section: 13,
-		title: `Combine Two Arrays Using the concat Method`,
-		exercise: `Use the concat method in the nonMutatingConcat function to concatenate attach to the end of original. The function should return the concatenated array.`,
+		title: `Sum All Primes`,
+		exercise: `A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+
+		Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.`,
 		starterCode: `
-		function nonMutatingConcat(original, attach) {
-			// Only change code below this line
-
-
-			// Only change code above this line
+		function sumPrimes(num) {
+			return num;
 		}
 
-		const first = [1, 2, 3];
-		const second = [4, 5];
-		nonMutatingConcat(first, second);
+		sumPrimes(10);
 		`,
 		solution: `
-		function nonMutatingConcat(original, attach) {
-			// Only change code below this line
-			return original.concat(attach)
+		function sumPrimes(num) {
+			// Helper function to check primality
+			function isPrime(num) {
+				for (let i = 2; i <= Math.sqrt(num); i++) {
+				if (num % i == 0)
+					return false;
+				}
+				return true;
+			}
 
-			// Only change code above this line
+			// Check all numbers for primality
+			let sum = 0;
+			for (let i = 2; i <= num; i++) {
+				if (isPrime(i))
+				sum += i;
+			}
+			return sum;
 		}
-
-		const first = [1, 2, 3];
-		const second = [4, 5];
-		nonMutatingConcat(first, second);
 		`,
 	},
 	{
 		section: 14,
-		title: `Add Elements to the End of an Array Using concat Instead of push`,
-		exercise: `Change the nonMutatingPush function so it uses concat to add newItem to the end of original instead of push. The function should return an array.`,
-		starterCode: `
-		function nonMutatingPush(original, newItem) {
-			// Only change code below this line
-			return original.push(newItem);
+		title: `Smallest Common Multiple`,
+		exercise: `Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
 
-			// Only change code above this line
+		The range will be an array of two numbers that will not necessarily be in numerical order.
+
+		For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.`,
+		starterCode: `
+		function smallestCommons(arr) {
+			return arr;
 		}
 
-		const first = [1, 2, 3];
-		const second = [4, 5];
-		nonMutatingPush(first, second);
+		smallestCommons([1,5]);
 		`,
 		solution: `
-		function nonMutatingPush(original, newItem) {
-			// Only change code below this line
-			return original.concat(newItem);
-
-			// Only change code above this line
+		function smallestCommons(arr) {
+			// Setup
+			const [min, max] = arr.sort((a, b) => a - b);
+			const range = Array(max - min + 1)
+				.fill(0)
+				.map((_, i) => i + min);
+			// Largest possible value for SCM
+			const upperBound = range.reduce((prod, curr) => prod * curr);
+			// Test all multiples of 'max'
+			for (let multiple = max; multiple <= upperBound; multiple += max) {
+				// Check if every value in range divides 'multiple'
+				const divisible = range.every((value) => multiple % value === 0);
+				if (divisible) {
+				return multiple;
+				}
+			}
 		}
 
-		const first = [1, 2, 3];
-		const second = [4, 5];
-		nonMutatingPush(first, second);
+		smallestCommons([1, 5]);
 		`,
 	},
 	{
 		section: 15,
-		title: `Use the reduce Method to Analyze Data`,
-		exercise: `The variable watchList holds an array of objects with information on several movies. Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to filter data and map over it to pull what you need. You may need to create other variables, and return the average rating from getRating function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.`,
+		title: `Drop it`,
+		exercise: `Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
+
+		Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.`,
 		starterCode: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
-		}
-		];
-
-		function getRating(watchList) {
-			// Only change code below this line
-			let averageRating;
-
-
-			// Only change code above this line
-		return averageRating;
+		function dropElements(arr, func) {
+			return arr;
 		}
 
-		console.log(getRating(watchList));
+		dropElements([1, 2, 3], function(n) {return n < 3; });
 		`,
 		solution: `
-		// The global variable
-		const watchList = [
-		{
-			"Title": "Inception",
-			"Year": "2010",
-			"Rated": "PG-13",
-			"Released": "16 Jul 2010",
-			"Runtime": "148 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Christopher Nolan",
-			"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-			"Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-			"Language": "English, Japanese, French",
-			"Country": "USA, UK",
-			"Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.8",
-			"imdbVotes": "1,446,708",
-			"imdbID": "tt1375666",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Interstellar",
-			"Year": "2014",
-			"Rated": "PG-13",
-			"Released": "07 Nov 2014",
-			"Runtime": "169 min",
-			"Genre": "Adventure, Drama, Sci-Fi",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan, Christopher Nolan",
-			"Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-			"Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-			"Language": "English",
-			"Country": "USA, UK",
-			"Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
-			"Metascore": "74",
-			"imdbRating": "8.6",
-			"imdbVotes": "910,366",
-			"imdbID": "tt0816692",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "The Dark Knight",
-			"Year": "2008",
-			"Rated": "PG-13",
-			"Released": "18 Jul 2008",
-			"Runtime": "152 min",
-			"Genre": "Action, Adventure, Crime",
-			"Director": "Christopher Nolan",
-			"Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
-			"Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-			"Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-			"Language": "English, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-			"Metascore": "82",
-			"imdbRating": "9.0",
-			"imdbVotes": "1,652,832",
-			"imdbID": "tt0468569",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Batman Begins",
-			"Year": "2005",
-			"Rated": "PG-13",
-			"Released": "15 Jun 2005",
-			"Runtime": "140 min",
-			"Genre": "Action, Adventure",
-			"Director": "Christopher Nolan",
-			"Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
-			"Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-			"Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
-			"Language": "English, Urdu, Mandarin",
-			"Country": "USA, UK",
-			"Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
-			"Metascore": "70",
-			"imdbRating": "8.3",
-			"imdbVotes": "972,584",
-			"imdbID": "tt0372784",
-			"Type": "movie",
-			"Response": "True"
-		},
-		{
-			"Title": "Avatar",
-			"Year": "2009",
-			"Rated": "PG-13",
-			"Released": "18 Dec 2009",
-			"Runtime": "162 min",
-			"Genre": "Action, Adventure, Fantasy",
-			"Director": "James Cameron",
-			"Writer": "James Cameron",
-			"Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-			"Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-			"Language": "English, Spanish",
-			"Country": "USA, UK",
-			"Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
-			"Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
-			"Metascore": "83",
-			"imdbRating": "7.9",
-			"imdbVotes": "876,575",
-			"imdbID": "tt0499549",
-			"Type": "movie",
-			"Response": "True"
-		}
-		];
+		function dropElements(arr, func) {
 
-		function getRating(watchList) {
-			// Only change code below this line
-			// console.log(watchList.map(item=>+item.imdbRating))
-			// console.log(watchList.reduce((acc, item)=>{acc+ parseFloat(item.imdbRating)}, 0))
-			let averageRating= watchList
-				.filter((item)=>item.Director==="Christopher Nolan")
-				.map((item)=>+item.imdbRating)
-				.reduce((acc, item)=>acc + item )/watchList.filter((item)=>item.Director==="Christopher Nolan").length
-
-
-			// Only change code above this line
-			return averageRating;
+			let originalLen = arr.length;
+			for (let i = 0; i < originalLen; i++) {
+				if (func(arr[0])) {
+				break;
+				} else {
+				arr.shift();
+				}
+			}
+			return arr;
 		}
 
-		console.log(getRating(watchList));
+		dropElements([1, 2, 3], function(n) {return n < 3; });
 		`,
 	},
 	{
 		section: 16,
-		title: `Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem`,
-		exercise: `Complete the code for the squareList function using any combination of map(), filter(), and reduce(). The function should return a new array containing the squares of only the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it. An example of an array of real numbers is [-3, 4.8, 5, 3, -3.2].
-
-		Note: Your function should not use any kind of for or while loops or the forEach() function.`,
+		title: `SteamrollerPassed`,
+		exercise: `Flatten a nested array. You must account for varying levels of nesting.`,
 		starterCode: `
-		const squareList = arr => {
-			// Only change code below this line
+		function steamrollArray(arr) {
 			return arr;
-			// Only change code above this line
-		};
+		}
 
-		const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-		console.log(squaredIntegers);
+		steamrollArray([1, [2], [3, [[4]]]]);
 		`,
 		solution: `
-		const squareList = arr => {
-			// Only change code below this line
-			return arr.map((item)=>
-				item>0 && item%1===0?item**2:"").filter((item)=>item!="");
-			// Only change code above this line
-		};
+		function steamrollArray(val,flatArr=[]) {
+			val.forEach(item => {
+				if (Array.isArray(item)) steamrollArray(item, flatArr);
+				else flatArr.push(item);
+			});
+			return flatArr;
+		}
 
-		const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-		console.log(squaredIntegers);
+		steamrollArray([1, [2], [3, [[4]]]]);
 		`,
 	},
 	{
 		section: 17,
-		title: `Sort an Array Alphabetically using the sort Method`,
-		exercise: `Use the sort method in the alphabeticalOrder function to sort the elements of arr in alphabetical order. The function should return the sorted array.`,
-		starterCode: `
-		function alphabeticalOrder(arr) {
-			// Only change code below this line
+		title: `Binary Agents`,
+		exercise: `Return an English translated sentence of the passed binary string.
 
-			return arr
-			// Only change code above this line
+		The binary string will be space separated.`,
+		starterCode: `
+		function binaryAgent(str) {
+			return str;
 		}
 
-		alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+		binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
 		`,
 		solution: `
-		function alphabeticalOrder(arr) {
-			// Only change code below this line
-
-			return arr.sort((a,b)=>a===b?0:a<b?-1:1)
-			// Only change code above this line
+		function binaryAgent(str) {
+  
+			return str.split(" ").map(x => String.fromCharCode(parseInt(x, 2))).join("");;
 		}
 
-		alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+		binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
 		`,
 	},
 	{
 		section: 18,
-		title: `Return a Sorted Array Without Changing the Original Array`,
-		exercise: `Use the sort method in the nonMutatingSort function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the globalArray variable.`,
+		title: `Everything Be True`,
+		exercise: `Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
+
+		In other words, you are given an array collection of objects. The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
+
+		In JavaScript, truthy values are values that translate to true when evaluated in a Boolean context.
+
+		Remember, you can access object properties through either dot notation or [] notation.`,
 		starterCode: `
-		const globalArray = [5, 6, 3, 2, 9];
-
-		function nonMutatingSort(arr) {
-			// Only change code below this line
-
-
-			// Only change code above this line
+		function truthCheck(collection, pre) {
+			return pre;
 		}
 
-		nonMutatingSort(globalArray);
+		truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 		`,
 		solution: `
-		const globalArray = [5, 6, 3, 2, 9];
+		function truthCheck(collection, pre) {
+			return collection.map(item=>item.hasOwnProperty(pre)).every(item=>item===true)&&collection.map(item=>Boolean(item[pre])).every(item=>item===true)
+		};
 
-		function nonMutatingSort(arr) {
-			// Only change code below this line
-			const newArr = [...arr]
-			return newArr.sort((a,b)=>a-b)
-			// Only change code above this line
-		}
 
-		nonMutatingSort(globalArray);
+		truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 		`,
 	},
 	{
 		section: 19,
-		title: `Split a String into an Array Using the split Method`,
-		exercise: `Use the split method inside the splitify function to split str into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.`,
+		title: `Arguments Optional`,
+		exercise: `Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
+
+		For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+
+		Calling this returned function with a single argument will then return the sum:
+
+		var sumTwoAnd = addTogether(2);
+		sumTwoAnd(3) returns 5.
+
+		If either argument isn't a valid number, return undefined.`,
 		starterCode: `
-		function splitify(str) {
-			// Only change code below this line
-
-
-			// Only change code above this line
+		function addTogether() {
+			return false;
 		}
 
-		splitify("Hello World,I-am code");
+		addTogether(2,3);
 		`,
 		solution: `
-		function splitify(str) {
-			// Only change code below this line
-			return str.split(/\W/)
-			// Only change code above this line
+		function addTogether(x, y) {
+			if (typeof x !== 'number'){
+				return undefined
+			}else if(y === undefined){
+				return (y)=>{
+					if(typeof y !== 'number'){
+					return undefined
+					}else{
+						return x+y
+					}
+				}
+			}else if(typeof y !== 'number'){
+				return undefined
+			}
+			return x+y
 		}
 
-		console.log(splitify("Hello World,I-am code"));
+		addTogether(2,3);
 		`,
 	},
 	{
 		section: 20,
-		title: `Combine an Array into a String Using the join Method`,
-		exercise: `Use the join method (among others) inside the sentensify function to make a sentence from the words in the string str. The function should return a string. For example, I-like-Star-Wars would be converted to I like Star Wars. For this challenge, do not use the replace method.`,
+		title: `Make a Person`,
+		exercise: `Fill in the object constructor with the following methods below:
+
+		getFirstName()
+		getLastName()
+		getFullName()
+		setFirstName(first)
+		setLastName(last)
+		setFullName(firstAndLast)
+		Run the tests to see the expected output for each method. The methods that take an argument must accept only one argument and it has to be a string. These methods must be the only available means of interacting with the object.`,
 		starterCode: `
-		function sentensify(str) {
+		const Person = function(firstAndLast) {
 			// Only change code below this line
+			// Complete the method below and implement the others similarly
+			this.getFullName = function() {
+				return "";
+			};
+			return firstAndLast;
+		};
 
-
-			// Only change code above this line
-		}
-
-		sentensify("May-the-force-be-with-you");
+		const bob = new Person('Bob Ross');
+		bob.getFullName();
 		`,
 		solution: `
-		function sentensify(str) {
+		const Person = function(firstAndLast) {
 			// Only change code below this line
-			return str.split(/\W/g).join(" ")
-
-			// Only change code above this line
-		}
-
-		sentensify("May-the-force-be-with-you");
+			// Complete the method below and implement the others similarly
+			let firstAndLastList = firstAndLast.split(' ')
+			this.getFullName = function() {
+				return firstAndLastList.join(' ');
+			};
+			this.getFirstName = function() {
+				return firstAndLastList[0];
+			};
+			this.getLastName = function() {
+				return firstAndLastList[1];
+			};
+			this.setFullName = function(fullName) {
+				firstAndLastList = fullName.split(' ')
+				return firstAndLastList;
+			};
+			this.setFirstName = function(firstName) {
+				firstAndLastList[0]=firstName
+				return firstAndLastList;
+			};
+			this.setLastName = function(lastName) {
+					firstAndLastList[1]=lastName
+				return firstAndLastList;
+			};
+			return firstAndLast;
+		};
+		
+		const bob = new Person('Bob Ross');
+		bob.getFullName();
 		`,
 	},
 	{
 		section: 21,
-		title: `Apply Functional Programming to Convert Strings to URL Slugs`,
-		exercise: `Fill in the urlSlug function so it converts a string title and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use replace. Here are the requirements:
+		title: `Map the Debris`,
+		exercise: `Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
 
-		The input is a string with spaces and title-cased words
+		The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
 
-		The output is a string with the spaces between words replaced by a hyphen (-)
+		You can read about orbital periods on Wikipedia.
 
-		The output should be all lower-cased letters
+		The values should be rounded to the nearest whole number. The body being orbited is Earth.
 
-		The output should not have any spaces`,
+		The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.`,
 		starterCode: `
-		// Only change code below this line
-		function urlSlug(title) {
-
-
+		function orbitalPeriod(arr) {
+			const GM = 398600.4418;
+			const earthRadius = 6367.4447;
+			return arr;
 		}
-		// Only change code above this line
+
+		orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 		`,
 		solution: `
-		// Only change code below this line
-		function urlSlug(title) {
-			return title.trim().toLowerCase().split(/\s+/).join("-")
-
-		}
-		// Only change code above this line
-		`,
-	},
-	{
-		section: 22,
-		title: `Use the every Method to Check that Every Element in an Array Meets a Criteria`,
-		exercise: `Use the every method inside the checkPositive function to check if every element in arr is positive. The function should return a Boolean value.`,
-		starterCode: `
-		function checkPositive(arr) {
-			// Only change code below this line
-
-
-			// Only change code above this line
+		function orbitalPeriod(arr) {
+			const GM = 398600.4418;
+			const earthRadius = 6367.4447;
+			return arr.map(({ name, avgAlt }) => {
+				const earth = earthRadius + avgAlt;
+				const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earth, 3)/GM));
+				return { name, orbitalPeriod };
+			});
 		}
 
-		checkPositive([1, 2, 3, -4, 5]);
-		`,
-		solution: `
-		function checkPositive(arr) {
-			// Only change code below this line
-			return arr.every(item=>item>0)
-
-			// Only change code above this line
-		}
-
-		checkPositive([1, 2, 3, -4, 5]);
-		`,
-	},
-	{
-		section: 23,
-		title: `Use the some Method to Check that Any Elements in an Array Meet a Criteria`,
-		exercise: `Use the some method inside the checkPositive function to check if any element in arr is positive. The function should return a Boolean value.`,
-		starterCode: `
-		function checkPositive(arr) {
-			// Only change code below this line
-
-
-			// Only change code above this line
-		}
-
-		checkPositive([1, 2, 3, -4, 5]);
-		`,
-		solution: `
-		function checkPositive(arr) {
-			// Only change code below this line
-			return arr.some(item=>item>0)
-
-			// Only change code above this line
-		}
-
-		checkPositive([1, 2, 3, -4, 5]);
-		`,
-	},
-	{
-		section: 24,
-		title: `Introduction to Currying and Partial Application`,
-		exercise: `Fill in the body of the add function so it uses currying to add parameters x, y, and z.`,
-		starterCode: `
-		function add(x) {
-			// Only change code below this line
-
-
-			// Only change code above this line
-		}
-
-		add(10)(20)(30);
-		`,
-		solution: `
-		function add(x) {
-			// Only change code below this line
-				return function(y){
-					return function(z){
-						return x+y+z
-				}
-			}
-
-			// Only change code above this line
-		}
-
-		add(10)(20)(30);
+		orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 		`,
 	},
 ];
 
-fpResults(fpList);
+iasResults(iasList);
