@@ -1,0 +1,41 @@
+<section>
+    <h2> 06 - Use @each to Map Over Items in a List </h2>
+    <p> Write an @each directive that goes through a list: blue, black, red and assigns each variable to a .color-bg
+        class, where the color part changes for each item. Each class should set the background-color the respective
+        color. </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        <style type='text/scss'>
+
+
+
+            div {
+            height: 200px;
+            width: 200px;
+          }
+        </style>
+
+        <div class="blue-bg"></div>
+        <div class="black-bg"></div>
+        <div class="red-bg"></div>
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        <style type='text/scss'>
+            @each $color in blue, black, red {
+            .#{$color}-bg {background-color: $color;}
+          }
+        
+        
+          div {
+            height: 200px;
+            width: 200px;
+          }
+        </style>
+
+        <div class="blue-bg"></div>
+        <div class="black-bg"></div>
+        <div class="red-bg"></div>
+    </xmp>
+    <hr>
+</section>

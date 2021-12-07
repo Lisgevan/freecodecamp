@@ -1,0 +1,41 @@
+<section>
+    <h2> 07 - Apply a Style Until a Condition is Met with @while </h2>
+    <p> Use @while to create a series of classes with different font-sizes.
+    </p>
+    <p>
+        There should be 5 different classes from text-1 to text-5. Then set font-size to 15px multiplied by the current
+        index number. Make sure to avoid an infinite loop! </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        <style type='text/scss'>
+
+
+
+        </style>
+
+        <p class="text-1">Hello</p>
+        <p class="text-2">Hello</p>
+        <p class="text-3">Hello</p>
+        <p class="text-4">Hello</p>
+        <p class="text-5">Hello</p>
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        <style type='text/scss'>
+            $i: 1;
+          @while $i < 6 {
+            .text-#{$i} {font-size: 15px * $i;}
+            $i: $i+1;
+          }
+        
+        
+        </style>
+
+        <p class="text-1">Hello</p>
+        <p class="text-2">Hello</p>
+        <p class="text-3">Hello</p>
+        <p class="text-4">Hello</p>
+        <p class="text-5">Hello</p>
+    </xmp>
+    <hr>
+</section>

@@ -1,0 +1,37 @@
+<section>
+    <h2> 05 - Use @for to Create a Sass Loop </h2>
+    <p> Write a @for directive that takes a variable $j that goes from 1 to 6. </p>
+    <p> It should create 5 classes called .text-1 to .text-5 where each has a font-size set to 15px multiplied by the
+        index. </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        <style type='text/scss'>
+
+
+
+        </style>
+
+        <p class="text-1">Hello</p>
+        <p class="text-2">Hello</p>
+        <p class="text-3">Hello</p>
+        <p class="text-4">Hello</p>
+        <p class="text-5">Hello</p>
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        <style type='text/scss'>
+            @for $i from 1 to 6 {
+            .text-#{$i} {font-size: 15px*$i;} 
+          }
+        
+        
+        </style>
+
+        <p class="text-1">Hello</p>
+        <p class="text-2">Hello</p>
+        <p class="text-3">Hello</p>
+        <p class="text-4">Hello</p>
+        <p class="text-5">Hello</p>
+    </xmp>
+    <hr>
+</section>

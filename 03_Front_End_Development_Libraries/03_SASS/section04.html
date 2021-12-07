@@ -1,0 +1,57 @@
+<section>
+    <h2> 04 - Use @if and @else to Add Logic To Your Styles </h2>
+    <p> Create a mixin called border-stroke that takes a parameter $val. The mixin should check for the following
+        conditions using @if, @else if, and @else:
+    </p>
+    <xmp>light - 1px solid black
+        medium - 3px solid black
+        heavy - 6px solid black
+    </xmp>
+    <p>
+        If $val is not light, medium, or heavy, the border should be set to none. </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        <style type='text/scss'>
+
+
+
+            #box {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            @include border-stroke(medium);
+          }
+        </style>
+
+        <div id="box"></div>
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        <style type='text/scss'>
+            @mixin border-stroke($val){
+            @if $val == light {
+              border: 1px solid black;
+            }
+            @else if $val == medium {
+              border: 3px solid black;
+            }
+            @else if $val == heavy {
+              border: 6px solid black;
+            }
+            @else{
+              border: none;
+            }
+          }
+          
+          #box {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            @include border-stroke(medium);
+          }
+        </style>
+
+        <div id="box"></div>
+    </xmp>
+    <hr>
+</section>

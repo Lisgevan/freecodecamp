@@ -1,0 +1,46 @@
+<section>
+    <h2> 02 - Nest CSS with Sass </h2>
+    <p> Use the nesting technique shown above to re-organize the CSS rules for both children of .blog-post element. For
+        testing purposes, the h1 should come before the p element. </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        <style type='text/scss'>
+            .blog-post {
+        
+          }
+          h1 {
+            text-align: center;
+            color: blue;
+          }
+          p {
+            font-size: 20px;
+          }
+        </style>
+
+        <div class="blog-post">
+            <h1>Blog Title</h1>
+            <p>This is a paragraph</p>
+        </div>
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        <style type='text/scss'>
+            .blog-post {
+                h1 {
+                text-align: center;
+                color: blue;
+                }
+                p {
+                font-size: 20px;
+                }
+            }
+          
+        </style>
+
+        <div class="blog-post">
+            <h1>Blog Title</h1>
+            <p>This is a paragraph</p>
+        </div>
+    </xmp>
+    <hr>
+</section>
