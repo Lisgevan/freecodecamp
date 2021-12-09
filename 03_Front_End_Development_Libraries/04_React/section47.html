@@ -1,0 +1,38 @@
+<section>
+    <h2> 47 - Render React on the Server with renderToString </h2>
+    <p>
+        The renderToString() method is provided on ReactDOMServer, which is available here as a global object. The
+        method takes one argument which is a React element. Use this to render App to a string.
+    </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        class App extends React.Component {
+        constructor(props) {
+        super(props);
+        }
+        render() {
+        return
+        <div />
+        }
+        };
+
+        // Change code below this line
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        class App extends React.Component {
+        constructor(props) {
+        super(props);
+        }
+        render() {
+        return
+        <div />
+        }
+        };
+
+        // Change code below this line
+        ReactDOMServer.renderToString(
+        <App />)
+    </xmp>
+    <hr>
+</section>

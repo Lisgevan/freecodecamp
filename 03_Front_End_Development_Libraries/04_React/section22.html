@@ -1,0 +1,46 @@
+<section>
+    <h2> 22 - Render State in the User Interface </h2>
+    <p> In the code editor, MyComponent is already stateful. Define an h1 tag in the component's render method which
+        renders the value of name from the component's state.</p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        class MyComponent extends React.Component {
+        constructor(props) {
+        super(props);
+        this.state = {
+        name: 'freeCodeCamp'
+        }
+        }
+        render() {
+        return (
+        <div>
+            { /* Change code below this line */ }
+
+            { /* Change code above this line */ }
+        </div>
+        );
+        }
+        };
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        class MyComponent extends React.Component {
+        constructor(props) {
+        super(props);
+        this.state = {
+        name: 'freeCodeCamp'
+        }
+        }
+        render() {
+        return (
+        <div>
+            { /* Change code below this line */ }
+            <h1>{this.state.name}</h1>
+            { /* Change code above this line */ }
+        </div>
+        );
+        }
+        };
+    </xmp>
+    <hr>
+</section>

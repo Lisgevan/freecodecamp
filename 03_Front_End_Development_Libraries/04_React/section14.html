@@ -1,0 +1,64 @@
+<section>
+    <h2> 14 - Pass Props to a Stateless Functional Component </h2>
+    <p> There are Calendar and CurrentDate components in the code editor. When rendering CurrentDate from the Calendar
+        component, pass in a property of date assigned to the current date from JavaScript's Date object. Then access
+        this prop in the CurrentDate component, showing its value within the p tags. Note that for prop values to be
+        evaluated as JavaScript, they must be enclosed in curly brackets, for instance date={Date()}. </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        const CurrentDate = (props) => {
+        return (
+        <div>
+            { /* Change code below this line */ }
+            <p>The current date is: </p>
+            { /* Change code above this line */ }
+        </div>
+        );
+        };
+
+        class Calendar extends React.Component {
+        constructor(props) {
+        super(props);
+        }
+        render() {
+        return (
+        <div>
+            <h3>What date is it?</h3>
+            { /* Change code below this line */ }
+            <CurrentDate />
+            { /* Change code above this line */ }
+        </div>
+        );
+        }
+        };
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        const CurrentDate = (props) => {
+        return (
+        <div>
+            { /* Change code below this line */ }
+            <p>The current date is: {props.date}</p>
+            { /* Change code above this line */ }
+        </div>
+        );
+        };
+
+        class Calendar extends React.Component {
+        constructor(props) {
+        super(props);
+        }
+        render() {
+        return (
+        <div>
+            <h3>What date is it?</h3>
+            { /* Change code below this line */ }
+            <CurrentDate date={Date()} />
+            { /* Change code above this line */ }
+        </div>
+        );
+        }
+        };
+    </xmp>
+    <hr>
+</section>
