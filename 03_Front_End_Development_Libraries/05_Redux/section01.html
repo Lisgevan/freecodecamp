@@ -1,0 +1,34 @@
+<section>
+    <h2> 01 - Create a Redux Store </h2>
+    <p>
+        The Redux store is an object which holds and manages application state. There is a method called createStore()
+        on the Redux object, which you use to create the Redux store. This method takes a reducer function as a required
+        argument. The reducer function is covered in a later challenge, and is already defined for you in the code
+        editor. It simply takes state as an argument and returns state.
+    </p>
+    <p>
+        Declare a store variable and assign it to the createStore() method, passing in the reducer as an argument.
+    </p>
+    <h3>Starter Code:</h3>
+    <xmp>
+        const reducer = (state = 5) => {
+        return state;
+        }
+
+        // Redux methods are available from a Redux object
+        // For example: Redux.createStore()
+        // Define the store here:
+    </xmp>
+    <h3>Solution:</h3>
+    <xmp>
+        const reducer = (state = 5) => {
+        return state;
+        }
+
+        // Redux methods are available from a Redux object
+        // For example: Redux.createStore()
+        // Define the store here:
+        const store = Redux.createStore(reducer)
+    </xmp>
+    <hr>
+</section>
