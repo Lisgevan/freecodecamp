@@ -1,0 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
+textarea {
+	height: 50vh;
+}
+
+div {
+	margin: 2em;
+}
+
+#preview {
+	padding: 1em;
+	margin-top: 0;
+	margin-left: 0;
+	width: 100%;
+}

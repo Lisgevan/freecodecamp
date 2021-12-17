@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: cadetblue;
+}
+
+#root {
+	background-color: khaki;
+}
+
+.drum-pad {
+	color: rgb(238, 234, 17);
+	font-size: 1.5em;
+	font-weight: 900;
+	text-shadow: black 4px 4px;
+	background-color: #7a0909;
+	border: 2px solid black;
+	height: 30%;
+	width: 25%;
+	border-radius: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+	box-shadow: 5px 5px #888888;
+}
+
+.drum-pad:hover {
+	color: rgb(238, 234, 17);
+}
+
+#display p {
+	background-color: aquamarine;
+	border: 2px solid black;
+	height: 2em;
+	font-size: 1.5em;
+	font-weight: 500;
+}

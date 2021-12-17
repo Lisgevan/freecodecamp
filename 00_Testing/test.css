@@ -1,0 +1,13 @@
+div > p {
+	color: green;
+}
+
+.qwerty:hover,
+.qwerty:focus {
+	background-color: blueviolet;
+}
+
+.pricing-button:hover,
+.pricing-button:focus {
+	background-color: #e1f1ff;
+}

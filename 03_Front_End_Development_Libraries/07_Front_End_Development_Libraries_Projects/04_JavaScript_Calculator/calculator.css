@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+.btn {
+	width: 60px;
+}
+
+#equals {
+	width: auto;
+}
+
+#clear {
+	width: auto;
+}
