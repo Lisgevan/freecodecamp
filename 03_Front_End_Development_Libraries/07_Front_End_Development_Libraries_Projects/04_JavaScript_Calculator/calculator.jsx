@@ -1,3 +1,8 @@
+//TODO:fix multiple zeros at top display
+//TODO:fix calculator's width display
+//TODO:fix max numbers to display
+//TODO:fix top display multiple dots adding
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -154,7 +159,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1 className="text-white border-bottom">My Claculator</h1>
+				<h1 className="text-white border-bottom">My Calculator</h1>
 				<Screens power={this.state.power} top={this.state.displayTop} bottom={this.state.displayBottom} />
 				<Keypad
 					numberClick={this.numberClick}
